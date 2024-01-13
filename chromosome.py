@@ -1,7 +1,7 @@
 from random import randint
 import numpy as np 
 
-class ChromosomeRandomMutation:
+class Chromosome:
     def __init__(self, problParam = None):
         self.__problParam = problParam
         self.__repres = []
