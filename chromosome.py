@@ -52,7 +52,7 @@ class Chromosome:
             newrepres[idx] = newGene
         
         self.__problParam["baseRepres"] = newrepres
-        offspring = ChromosomeRandomMutation(self.__problParam)
+        offspring = Chromosome(self.__problParam)
 
         return offspring
     
