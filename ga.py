@@ -1,5 +1,5 @@
 from random import randint
-from chromosome_random_mutation import ChromosomeRandomMutation as Chromosome
+from chromosome import Chromosome
 import numpy as np
 import random
 
