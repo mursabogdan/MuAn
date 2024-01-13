@@ -1,15 +1,9 @@
+import math
 import networkx as nx
-import numpy as np
-import math
-from ga import GA
-
-
-import numpy as np
-import math
 
 from time import time
 
-
+from ga import GA
 
 def compute_euclidian_distance(x, y):
     p1 = [SCORE_THRESHOLD, SCORE_THRESHOLD]
@@ -160,17 +154,10 @@ for nodes_no in NODES_NOs:
         dens.append(density)
         dgc.append(degree_centrality)
 
-        nodes_map = dict()
-
-        for n in G_evolved.nodes():
-            nodes_map[n] = n + 1
-
-        G_evolved = nx.relabel_nodes(G_evolved, nodes_map)
-
         network_name = "motifs-{}-{}-{}".format(SCORE_THRESHOLD, nodes_no, cc)
 
         with open(f"results/generated_g-{network_name}.network", "w") as f:
-            for e in G_evolved.edges():
+            for e in evolved_G.edges():
                 if e[0] == e[1]:
                     continue
                 f.write("{}\t{}\t1\n".format(e[0], e[1]))
